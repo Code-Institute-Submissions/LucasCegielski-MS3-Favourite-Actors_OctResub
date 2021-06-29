@@ -16,7 +16,6 @@ Aim of this project is to create a data base of favourite actors, allowing users
     - [Wireframe](#wireframe)
 2. [Features](#features)
     - [Existing Features](#existing-features)
-    - [Features left to Implement](#features-left-to-implement)
 3. [Technologies Used](#technologies-used)
     - [Technologies](#technologies)
     - [Languages](#languages)
@@ -80,7 +79,7 @@ This single page application allows users to navigate easily between the game an
 
 - **Home** - takes user to the home page of this application.
 
-- **Books** - allows users to view the data base.
+- **Actors** - allows users to view the data base.
 
 - **Sign Up** - allows new user to register account.
 
@@ -93,12 +92,6 @@ This single page application allows users to navigate easily between the game an
 
 - **Logout** - allows user to log out of their account.
 
-## Features Left to Implement
-
-- **Rating** - feature will be added, allowing users to rate the books.
-
-- **Invite friend** - feature will be added, allowing user to invite friends to join the application.
-
 [Top](#table-of-content)
 # Technologies Used
 
@@ -110,8 +103,8 @@ This single page application allows users to navigate easily between the game an
 - [Filestar](https://filestar.com/)
     - to convert the wireframe file from .fig to .jpg.
 
-- [Fontawesome](https://fontawesome.com/)
-    - to provide icons to the game.
+- [Materialize](https://materializecss.com/)
+    - to provide icons to the app.
 
 - [Google Fonts](https://fonts.google.com/)
     - to provide free font to the app.
@@ -135,6 +128,10 @@ This single page application allows users to navigate easily between the game an
     - to create this project mockup, of which image is placed at the very top of this readme file.
     
 [Top](#table-of-content)
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 # Testing
 
