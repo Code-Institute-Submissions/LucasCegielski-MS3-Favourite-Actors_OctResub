@@ -18,17 +18,35 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+@app.route("/")
+@app.route("/home")
+def home():
+    home = mongo.db.actors.find()
+    recent = list(mongo.db.actors.find().sort("date", -1))
+    return render_template("home.html", home=home, recent=recent)
+
+
+# Signup functionality created by following Code Institute's video
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
+    if request.method == "POST":
+        # check if username already exists in db
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if exsting_user:
+            flash("Username already exists")
+            return redirect(url_for("signup"))
+        signup = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(signup)
+
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Registration Successful!")
     return render_template("signup.html")
-
-
-
-@app.route("/")
-@app.route("/get_actors")
-def get_actors():
-    actors = mongo.db.actors.find()
-    return render_template("actors.html", actors=actors)
 
 
 if __name__ == "__main__":
