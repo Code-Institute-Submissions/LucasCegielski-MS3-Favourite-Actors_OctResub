@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!---- Famous Scientists sections --->
+<!---- My Top 3 Actors section --->
 <section class="section-margin">
     <h2 class="center">My Top 3</h2>
     <hr>
@@ -9,15 +9,15 @@
       <div class="col s12 m4">
         <div class="card">
           <div class="card-image">
-            <img src="static/images/einstein.jpg" alt="Albert Einstein Picture">
+            <img src="static/images/AHopkins.jpg" alt="Sir Anthony Hopkins">
           </div>
           <div class="card-content center-align">
-            <p class="featured-names">Albert Einstein</p>
+            <p class="featured-names">Sir Anthony Hopkins</p>
           </div>
           <!---- If session user cookie is set it shows the option "More Details" --->
           {% if session.user %}
           <div class="card-action center-align">
-            <a href="scientists/60b7b09028e798f8bc2985e9" class="waves-effect btn-small light-green darken-1">More
+            <a href="actors/60debdf8cafc341e32cb7554" class="waves-effect btn-small light-green darken-1">More
               Details</a>
           </div>
           {% endif %}
@@ -26,15 +26,15 @@
       <div class="col s12 m4">
         <div class="card">
           <div class="card-image">
-            <img src="static/images/curie.jpg" alt="Marie Curie Picture">
+            <img src="static/images/DWashington.jpg" alt="Denzel Washington">
           </div>
           <div class="card-content center-align">
-            <p class="featured-names">Marie Curie</p>
+            <p class="featured-names">Denzel Washington</p>
           </div>
-          <!---- If session user cookie is set it shows the option "More Details" --->
+          <!---- If session user cookie is set it displays the option "Show More" --->
           {% if session.user %}
           <div class="card-action center-align">
-            <a href="scientists/60ba639cc7a1bb88c129d3de" class="waves-effect btn-small light-green darken-1">More
+            <a href="actors/60debe58cafc341e32cb7555" class="waves-effect btn-small light-green darken-1">More
               Details</a>
           </div>
           {% endif %}
@@ -43,15 +43,15 @@
       <div class="col s12 m4">
         <div class="card">
           <div class="card-image">
-            <img src="static/images/tesla.jpg" alt="Nikola Tesla Picture">
+            <img src="static/images/SConnery.jpg" alt="Sir Sean Connery">
           </div>
           <div class="card-content center-align">
-            <p class="featured-names">Nikola Tesla</p>
+            <p class="featured-names">Sir Sean Connery</p>
           </div>
-          <!---- If session user cookie is set it shows the option "More Details" --->
+          <!---- If session user cookie is set it displays the option "Show More" --->
           {% if session.user %}
           <div class="card-action center-align">
-            <a href="scientists/60bce29586031e0078b2b49e" class="waves-effect btn-small light-green darken-1">More
+            <a href="actors/60deb7f3cafc341e32cb7553" class="waves-effect btn-small light-green darken-1">More
               Details</a>
           </div>
           {% endif %}
@@ -59,12 +59,12 @@
       </div>
     </div>
   </section>
-  <!---- For loop showing most recent scientists added --->
+  <!---- For loop that shows the most recent entries into db --->
   <section class="section-margin">
-    <h2 class="center">Recent Additions</h2>
+    <h2 class="center">Latest entries</h2>
     <hr>
     <div class="row row-margin">
-      {% for scientist in recent %}
+      {% for actors in recent %}
       {% if loop.index < 7 %}
       <div class="col s12 m4">
   
@@ -72,17 +72,17 @@
   
           <div class="card-content white-text">
   
-            <span class="card-title center-align"><b>{{ scientist.name }}</b></span>
+            <span class="card-title center-align"><b>{{ actors.full_name }}</b></span>
             <hr>
-            <p><b class="tags">Born in:</b> {{ scientist.country_born }}</p>
-            <p><b class="tags">Date of Birth:</b> {{ scientist.dob }}</p>
-            <p><b class="tags">Field of Research:</b> {{ scientist.field_of_research }}</p>
-            <p><b class="tags">Is Nobel Laureate:</b> {{ scientist.nobel_laureate }}</p><br>
+            <p><b class="tags">Nationality:</b> {{ actors.nationality }}</p>
+            <p><b class="tags">Date of Birth:</b> {{ actors.dob }}</p>
+            <p><b class="tags">My Favourite Movie:</b> {{ actors.favourite_film }}</p>
+            <p><b class="tags">Is Academy Award Winner:</b> {{ actors.oscars }}</p><br>
           </div>
           {% if session.user %}
           <div class="card-action center-align">
-            <a href="{{ url_for('scientist', scientist_id=scientist._id) }}"
-              class="waves-effect btn-small light-green darken-1">More Details</a>
+            <a href="{{ url_for('actors', actors_id=actors._id) }}"
+              class="waves-effect btn-small light-green darken-1">Show More</a>
           </div>
           {% endif %}
   
