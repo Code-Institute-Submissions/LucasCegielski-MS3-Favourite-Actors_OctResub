@@ -22,13 +22,13 @@
               <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
               <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('actors') }}">Actors</a></li>
+                    <li><a href="{{ url_for('#') }}">Actors</a></li>
                     {% if session.user %}
-                    <li><a href="{{ url_for('add_actors') }}">Add</a></li>
-                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    <li><a href="{{ url_for('#') }}">Add</a></li>
+                    <li><a href="{{ url_for('#') }}">Logout</a></li>
                     {% else %}
                     <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('#') }}">Login</a></li>
                     {% endif %}
               </ul>
             </div>
@@ -38,12 +38,12 @@
           <ul class="sidenav" id="mobile-demo">
             <li><a href="{{ url_for('home') }}">Home</a></li>
             {% if session.user %}
-            <li><a href="{{ url_for('actors') }}">Actors</a></li>
-            <li><a href="{{ url_for('add_actors') }}">Add</a></li>
-            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            <li><a href="{{ url_for('#') }}">Actors</a></li>
+            <li><a href="{{ url_for('#') }}">Add</a></li>
+            <li><a href="{{ url_for('#') }}">Logout</a></li>
             {% else %}
             <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
-            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('#') }}">Login</a></li>
             {% endif %}
           </ul>
     </header>
