@@ -28,7 +28,7 @@
                     <li><a href="{{ url_for('#') }}">Logout</a></li>
                     {% else %}
                     <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
-                    <li><a href="{{ url_for('#') }}">Login</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
                     {% endif %}
               </ul>
             </div>
@@ -43,7 +43,7 @@
             <li><a href="{{ url_for('#') }}">Logout</a></li>
             {% else %}
             <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
-            <li><a href="{{ url_for('#') }}">Login</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
             {% endif %}
           </ul>
     </header>
@@ -73,7 +73,7 @@
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text">Scientia Compendium</h5>
+                    <h5 class="white-text">My Favourite Actors</h5>
                     <hr>
                     <p class="grey-text text-lighten-4">“Cinema should make you forget 
                         you are sitting in a theater.”
