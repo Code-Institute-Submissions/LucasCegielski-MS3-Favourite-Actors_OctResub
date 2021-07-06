@@ -77,12 +77,34 @@ def login():
     return render_template("login.html")
 
 
+# Logout functionality
 @app.route("/logout")
 def logout():
     # remove user from session cookies
     flash("You have succesfully logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+# Add actor functionality
+@app.route("/actors/add", methods=["GET", "POST"])
+def add_actors():
+    if request.method == "POST":
+        actor = {
+            "full_name": request.form.get("full_name"),
+            "nationality": request.form.get("nationality"),
+            "dob": request.form.get("dob"),
+            "favourite_movie": request.form.get("favourite_movie"),
+            # "description": request.form.get("description"),
+            "oscars": request.form.get("oscars"),
+            "filmography": request.form.get("filmography"),
+            "added_by": session["user"],
+            "date": datetime.datetime.utcnow()
+        }
+        mongo.db.actors.insert_one(actor)
+        flash("An Actor was Succesfully Added")
+        return redirect(url_for("actors"))
+    return render_template("add_actors.html")
 
 
 if __name__ == "__main__":
