@@ -107,6 +107,25 @@ def add_actors():
     return render_template("add_actors.html")
 
 
+@app.route("/edit_actors/<actors_id>", methods=["GET", "POST"])
+def edit_actors(actors_id):
+    if request.method == "POST":
+        send = {
+            "full_name": request.form.get("full_name"),
+            "nationality": request.form.get("nationality"),
+            "dob": request.form.get("dob"),
+            "favourite_movie": request.form.get("favourite_movie"),
+            "oscars": request.form.get("oscars"),
+            "filmography": request.form.get("filmography")
+        }
+        mongo.db.actors.update({"_id": ObjectId(actor_id)}, send)
+        flash("An Actor was updated")
+        return redirect(url_for("actors"))
+
+    actor = mongo.db.scientists.find_one({"_id": ObjectId(actor_id)})
+    return render_template("edit_actors.html", actor=actor)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
