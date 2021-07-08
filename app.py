@@ -32,6 +32,12 @@ def actors():
     return render_template("search.html", actors=actors)
 
 
+@app.route("/actors/<actor_id>")
+def actor(actor_id):
+    actor = mongo.db.actors.find_one({"_id": ObjectId(actor_id)})
+    return render_template("actors.html", actors=actors)
+
+
 # Signup functionality created by following Code Institute's video
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
