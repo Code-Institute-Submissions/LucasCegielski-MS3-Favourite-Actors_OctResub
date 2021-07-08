@@ -145,6 +145,13 @@ def edit_actors(actors_id):
     return render_template("edit_actors.html", actor=actor)
 
 
+@app.route("/delete_actor/<actor_id>")
+def delete_actor(actor_id):
+    mongo.db.actors.remove({"_id": ObjectId(actor_id)})
+    flash("Actor was deleted")
+    return redirect(url_for("actors"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
