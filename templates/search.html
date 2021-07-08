@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center">Search Actors</h3>
+
+<!---- Search Bar --->
+<div class="row card-panel white search-bar">
+    <form action="{{ url_for('search') }}" method="post" class="col s12">
+        <div class="row valig-wrapper center-align row-margin">
+            <div class="input-field col s12 m8">
+                <i class="material-icons prefix">search</i>
+                <input type="text" name="query" minlength="3" id="query" class="validate" required>
+                <label for="query" name="query">Search Actors</label>
+            </div>
+            <div class="row valig-wrapper center-align">
+                <a href="{{ url_for('actors') }}" class="black btn margin">Reset</a>
+                <button type="submit" class="light-green darken-1 btn margin">
+                    <i class="material-icons prefix left">search</i>Search
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!---- For loop showing all the actors in the db --->
+<ul>
+    <div class="row">
+        {% for actor in actors %}
+        <div class="col s12 m6">
+
+            <div class="card blue-grey darken-1">
+
+                <div class="card-content white-text">
+                    <span class="card-title center-align"><b>{{ actor.full_name }}</b></span>
+                    <hr>
+                    <p><b class="tags">Nationality:</b> {{ actor.nationality }}</p>
+                    <p><b class="tags">Date of Birth:</b> {{ actor.dob }}</p>
+                    <p><b class="tags">Favourite Movie:</b> {{ actor.favourite_movie }}</p>
+                    <p><b class="tags">Academy Award Winner:</b> {{ actor.oscars }}</p><br>
+                </div>
+                <!---- If session user cookie is set it shows the option "Show More" --->
+                {% if session.user %}
+                <div class="card-action center-align">
+                    <a href="{{ url_for('actor', actor_id=actor._id) }}"
+                        class="waves-effect btn-small light-green darken-1">Show More</a>
+                </div>
+                {% endif %}
+
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</ul>
+
+{% endblock %}

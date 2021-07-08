@@ -26,6 +26,12 @@ def home():
     return render_template("home.html", home=home, recent=recent)
 
 
+@app.route("/actors")
+def actors():
+    actors = mongo.db.actors.find()
+    return render_template("search.html", actors=actors)
+
+
 # Signup functionality created by following Code Institute's video
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
@@ -110,7 +116,7 @@ def add_actors():
 @app.route("/edit_actors/<actors_id>", methods=["GET", "POST"])
 def edit_actors(actors_id):
     if request.method == "POST":
-        send = {
+        submit = {
             "full_name": request.form.get("full_name"),
             "nationality": request.form.get("nationality"),
             "dob": request.form.get("dob"),
@@ -118,7 +124,7 @@ def edit_actors(actors_id):
             "oscars": request.form.get("oscars"),
             "filmography": request.form.get("filmography")
         }
-        mongo.db.actors.update({"_id": ObjectId(actors_id)}, send)
+        mongo.db.actors.update({"_id": ObjectId(actors_id)}, submit)
         flash("An Actor was updated")
         return redirect(url_for("actors"))
 
