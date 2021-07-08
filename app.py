@@ -38,6 +38,13 @@ def actor(actor_id):
     return render_template("actors.html", actors=actors)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    actors = (mongo.db.actors.find({"$text": {"$search": query}}))
+    return render_template("search.html", actors=actors)
+
+
 # Signup functionality created by following Code Institute's video
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
