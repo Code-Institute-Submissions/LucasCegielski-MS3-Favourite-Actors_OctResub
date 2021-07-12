@@ -53,7 +53,7 @@ def signup():
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
-        if exsting_user:
+        if existing_user:
             flash("Username already exists")
             return redirect(url_for("signup"))
         signup = {

@@ -1,11 +1,11 @@
-{% extend "base.html" %}
+{% extends "base.html" %}
 {% block content %}
 
 <h3 class="center">Add an Actor</h3>
 
 <!-- Add Actor Form compiled of 6 input fields -->
 <div class="row card-panel white">
-    <form class="col s12" method="POST" action="{{ url_for('add_actor') }}">
+    <form class="col s12" method="POST" action="{{ url_for('add_actors') }}">
         <!-- Row with Actor's Full Name name and Nationality -->
         <div class="row">
             <div class="input-field col s6">
