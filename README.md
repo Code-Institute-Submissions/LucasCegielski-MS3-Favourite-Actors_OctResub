@@ -24,6 +24,9 @@ Aim of this project is to create a data base of favourite actors, allowing users
 4. [Testing](#testing)
 5. [Bugs](#bugs)
 6. [Deployment](#deployment)
+      [Begining](#Creating-this-project)
+    - [GitHub](#github-pages)
+    - [Heroku](#heroku)
 7. [Credits](#credits)
 
 # User Experience
@@ -267,6 +270,38 @@ Most bugs were cleared thanks to all the people and communities mentioned in cre
 - Click save next to it and wait for the page to refresh automatically. You will be taken back to the top of the settings page.
 
 - Scroll back down again to "Github Pages" section and find the link of now published page.
+
+## Heroku
+
+- To deploy the app using Heroku, go through the following steps:
+
+    1. Use pip3 freeze > `requirements.txt` to create a list of the dependencies.
+
+    2. Create a `Procfile` by running this command on the CLI: `echo web: python app.py > Procfile`
+
+    3. Run `git add .`, `git commit -m`, and `git push`, to push the project files to your GitHub repository.
+
+    4. Navigate to Heroku, log in and create a new app by clicking on the 'New' and 'Create New App'. Enter your app name and select your region and create app.
+
+    5. Under the 'Deploy' tab, select 'GitHub - Connect to GitHub'.
+    
+    6. Enter your repository's name in the input field, and connect once found.
+
+    7. To set your environment variables navigate to the 'Settings' tab and scroll down to 'reveal config vars'
+
+    8. Add the config vars:
+
+    | Key | Value |
+    |:---:|:-----:|
+    | IP | 0.0.0.0 |
+    | PORT | 5000 |
+    | MONGO_DBNAME | `<database_name>` |
+    | MONGO_URI | `mongodb+srv://<username>:<password>@cluster0.ar4ah.mongodb.net/<database_name>?retryWrites=true&w=majority` |
+    | SECRET_KEY | `<Your secret Key>` |
+
+    9. Navigate to the 'Deploy' tab. To enable automatic deployment, scroll down to the 'Automatic Deploys' section.
+
+    10. Choose your GitHub branch and enable automatic deployment.
 
 ## Running project locally
 
