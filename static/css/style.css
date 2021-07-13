@@ -1,8 +1,31 @@
+/*--- General ---*/
+
 body {
-    background-color: #C2848D;
-    font-family: Garamond;
+    background-color: #bdbdbd;
+    font-family: Prompt;
+    font-weight: 400;
 }
 
+/*--- Navbar ---*/
+
+nav .brand-logo:hover {
+    color:#bdbdbd;
+}
+
+nav ul a:hover {
+    color: #bdbdbd;
+}
+
+}
 .flashes h4 {
     line-height: 2;
+}
+
+/*--- Footer ---*/
+
+footer ul a {
+    color: #fff
+}
+footer ul a:hover {
+    color: #bdbdbd;
 }

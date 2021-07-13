@@ -38,6 +38,7 @@ def actor(actor_id):
     return render_template("actors.html", actors=actors)
 
 
+# Search functionality
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -68,6 +69,7 @@ def signup():
     return render_template("signup.html")
 
 
+# Login functionality
 @app.route("/login")
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -126,6 +128,7 @@ def add_actors():
     return render_template("add_actors.html")
 
 
+# Edit actor functionality
 @app.route("/edit_actors/<actors_id>", methods=["GET", "POST"])
 def edit_actors(actors_id):
     if request.method == "POST":
@@ -145,6 +148,7 @@ def edit_actors(actors_id):
     return render_template("edit_actors.html", actor=actor)
 
 
+# Delete actor functionality
 @app.route("/delete_actor/<actor_id>")
 def delete_actor(actor_id):
     mongo.db.actors.remove({"_id": ObjectId(actor_id)})
