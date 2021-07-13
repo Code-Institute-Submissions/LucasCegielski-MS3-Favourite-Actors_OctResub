@@ -3,10 +3,12 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
+from pymongo import TEXT
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
+
 
 
 app = Flask(__name__)
@@ -17,6 +19,8 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+#create search index
+mongo.db.actors.create_index([('full_name', TEXT)], name='search_index', default_language='english')
 
 @app.route("/")
 @app.route("/home")
@@ -36,7 +40,6 @@ def actors():
 def actor(actors_id):
     actor = mongo.db.actors.find_one({"_id": ObjectId(actors_id)})
     return render_template("actors.html", actors=actors)
-
 
 # Search functionality
 @app.route("/search", methods=["GET", "POST"])
@@ -149,9 +152,9 @@ def edit_actors(actors_id):
 
 
 # Delete actor functionality
-@app.route("/delete_actor/<actor_id>")
-def delete_actor(actor_id):
-    mongo.db.actors.remove({"_id": ObjectId(actor_id)})
+@app.route("/delete_actor/<actors_id>")
+def delete_actor(actors_id):
+    mongo.db.actors.remove({"_id": ObjectId(actors_id)})
     flash("Actor was deleted")
     return redirect(url_for("actors"))
 
