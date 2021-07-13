@@ -32,9 +32,9 @@ def actors():
     return render_template("search.html", actors=actors)
 
 
-@app.route("/actors/<actor_id>")
-def actor(actor_id):
-    actor = mongo.db.actors.find_one({"_id": ObjectId(actor_id)})
+@app.route("/actors/<actors_id>")
+def actor(actors_id):
+    actor = mongo.db.actors.find_one({"_id": ObjectId(actors_id)})
     return render_template("actors.html", actors=actors)
 
 
