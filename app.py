@@ -1,4 +1,5 @@
 import os
+import datetime
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -10,7 +11,6 @@ if os.path.exists("env.py"):
     import env
 
 
-
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -19,8 +19,12 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-#create search index
-mongo.db.actors.create_index([('full_name', TEXT)], name='search_index', default_language='english')
+
+
+# Create search index
+mongo.db.actors.create_index([('full_name', TEXT
+)], name='search_index', default_language='english')
+
 
 @app.route("/")
 @app.route("/home")
@@ -36,17 +40,21 @@ def actors():
     return render_template("search.html", actors=actors)
 
 
-@app.route("/actors/<actors_id>")
-def actor(actors_id):
-    actor = mongo.db.actors.find_one({"_id": ObjectId(actors_id)})
-    return render_template("actors.html", actors=actors)
+@app.route("/actors/<actor_id>")
+def actor(actor_id):
+    actor = mongo.db.actors.find_one({"_id": ObjectId(actor_id)})
+    return render_template("actors.html", actor=actor)
+
 
 # Search functionality
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    actors = (mongo.db.actors.find({"$text": {"$search": query}}))
-    return render_template("search.html", actors=actors)
+    if query is not None:
+        actors = mongo.db.actors.find({"$text": {"$search": query}})
+        return render_template("search.html", actors=actors)
+    else:
+        return render_template("search.html")
 
 
 # Signup functionality created by following Code Institute's video
@@ -69,11 +77,11 @@ def signup():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
+        return redirect(url_for("home"))
     return render_template("signup.html")
 
 
 # Login functionality
-@app.route("/login")
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -95,7 +103,7 @@ def login():
 
         else:
             # username doesn't exist
-            flash("Incorrect User and/or Password")
+            flash("Entered Username and/or Password is incorrect!")
             return redirect(url_for("login"))
 
     return render_template("login.html")
@@ -112,7 +120,7 @@ def logout():
 
 # Add actor functionality
 @app.route("/actors/add", methods=["GET", "POST"])
-def add_actors():
+def add_actor():
     if request.method == "POST":
         actor = {
             "full_name": request.form.get("full_name"),
@@ -128,12 +136,12 @@ def add_actors():
         mongo.db.actors.insert_one(actor)
         flash("An Actor was Succesfully Added")
         return redirect(url_for("actors"))
-    return render_template("add_actors.html")
+    return render_template("add_actor.html")
 
 
 # Edit actor functionality
-@app.route("/edit_actors/<actors_id>", methods=["GET", "POST"])
-def edit_actors(actors_id):
+@app.route("/edit_actor/<actor_id>", methods=["GET", "POST"])
+def edit_actor(actor_id):
     if request.method == "POST":
         submit = {
             "full_name": request.form.get("full_name"),
@@ -143,22 +151,23 @@ def edit_actors(actors_id):
             "oscars": request.form.get("oscars"),
             "filmography": request.form.get("filmography")
         }
-        mongo.db.actors.update({"_id": ObjectId(actors_id)}, submit)
+        mongo.db.actors.update({"_id": ObjectId(actor_id)}, submit)
         flash("An Actor was updated")
         return redirect(url_for("actors"))
 
-    actor = mongo.db.actors.find_one({"_id": ObjectId(actors_id)})
-    return render_template("edit_actors.html", actor=actor)
+    actor = mongo.db.actors.find_one({"_id": ObjectId(actor_id)})
+    return render_template("edit_actor.html", actor=actor)
 
 
 # Delete actor functionality
-@app.route("/delete_actor/<actors_id>")
-def delete_actor(actors_id):
-    mongo.db.actors.remove({"_id": ObjectId(actors_id)})
+@app.route("/delete_actor/<actor_id>")
+def delete_actor(actor_id):
+    mongo.db.actors.remove({"_id": ObjectId(actor_id)})
     flash("Actor was deleted")
     return redirect(url_for("actors"))
 
 
+# !!!!!!! CHANGE to debug=False BEFORE DEPLOYING !!!!!!!!!
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

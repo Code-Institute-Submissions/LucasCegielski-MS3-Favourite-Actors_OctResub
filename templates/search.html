@@ -41,7 +41,7 @@
                 <!---- If session user cookie is set it shows the option "Show More" --->
                 {% if session.user %}
                 <div class="card-action center-align">
-                    <a href="{{ url_for('actors', actors_id=actors._id) }}"
+                    <a href="{{ url_for('actor', actor_id=actor._id) }}"
                         class="waves-effect btn-small light-green darken-1">Show More</a>
                 </div>
                 {% endif %}

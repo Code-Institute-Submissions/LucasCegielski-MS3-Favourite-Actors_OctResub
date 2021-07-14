@@ -24,7 +24,7 @@
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="{{ url_for('actors') }}">Search Actors</a></li>
                     {% if session.user %}
-                      <li><a href="{{ url_for('add_actors') }}">Add</a></li>
+                      <li><a href="{{ url_for('add_actor') }}">Add</a></li>
                       <li><a href="{{ url_for('logout') }}">Logout</a></li>
                     {% else %}
                       <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
@@ -39,7 +39,7 @@
             <li><a href="{{ url_for('home') }}">Home</a></li>
             {% if session.user %}
               <li><a href="{{ url_for('actors') }}">Search Actors</a></li>
-              <li><a href="{{ url_for('add_actors') }}">Add</a></li>
+              <li><a href="{{ url_for('add_actor') }}">Add</a></li>
               <li><a href="{{ url_for('logout') }}">Logout</a></li>
             {% else %}
               <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
@@ -95,7 +95,7 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                © 2021 Copyright
+                © 2021 Copyright by Lukasz Cegielski
             </div>
         </div>
     </footer>
