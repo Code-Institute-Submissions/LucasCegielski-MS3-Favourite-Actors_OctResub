@@ -17,7 +17,7 @@
           <!---- If session user cookie is set it shows the option "Show More" --->
           {% if session.user %}
           <div class="card-action center-align">
-            <a href="actors/60debdf8cafc341e32cb7554" class="waves-effect btn-small light-green darken-1">Show More</a>
+            <a href="actors/60debdf8cafc341e32cb7554" class="waves-effect btn-small blue-grey">Show More</a>
           </div>
           {% endif %}
         </div>
@@ -33,7 +33,7 @@
           <!---- If session user cookie is set it displays the option "Show More" --->
           {% if session.user %}
           <div class="card-action center-align">
-            <a href="actors/60debe58cafc341e32cb7555" class="waves-effect btn-small light-green darken-1">Show More</a>
+            <a href="actors/60debe58cafc341e32cb7555" class="waves-effect btn-small blue-grey">Show More</a>
           </div>
           {% endif %}
         </div>
@@ -49,7 +49,7 @@
           <!---- If session user cookie is set it displays the option "Show More" --->
           {% if session.user %}
           <div class="card-action center-align">
-            <a href="actors/60deb7f3cafc341e32cb7553" class="waves-effect btn-small light-green darken-1">Show More</a>
+            <a href="actors/60deb7f3cafc341e32cb7553" class="waves-effect btn-small blue-grey">Show More</a>
           </div>
           {% endif %}
         </div>
@@ -64,19 +64,19 @@
       {% for actor in recent %}
       {% if loop.index < 7 %}
       <div class="col s12 m4">
-        <div class="card blue-grey darken-1">
+        <div class="card grey darken-2">
           <div class="card-content white-text">
             <span class="card-title center-align"><b>{{ actor.full_name }}</b></span>
             <hr>
             <p><b class="tags">Nationality:</b> {{ actor.nationality }}</p>
             <p><b class="tags">Date of Birth:</b> {{ actor.dob }}</p>
-            <p><b class="tags">My Favourite Movie:</b> {{ actor.favourite_film }}</p>
+            <p><b class="tags">My Favourite Movie:</b> {{ actor.favourite_movie }}</p>
             <p><b class="tags">Is Academy Award Winner:</b> {{ actor.oscars }}</p><br>
           </div>
           {% if session.user %}
           <div class="card-action center-align">
             <a href="{{ url_for('actor', actor_id=actor._id) }}"
-              class="waves-effect btn-small light-green darken-1">Show More</a>
+              class="waves-effect btn-small blue-grey">Show More</a>
           </div>
           {% endif %}
         </div>

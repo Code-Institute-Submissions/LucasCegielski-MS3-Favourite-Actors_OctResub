@@ -6,6 +6,10 @@ body {
     font-weight: 400;
 }
 
+.min-height {
+    min-height: calc(100vh - 300px);
+  }
+
 /*--- Navbar ---*/
 
 nav .brand-logo:hover {
@@ -16,16 +20,27 @@ nav ul a:hover {
     color: #bdbdbd;
 }
 
-}
+
 .flashes h4 {
     line-height: 2;
 }
 
+/*--- Home Page ---*/
+
+.featured-names {
+    font-size: 20px;
+}
+
 /*--- Footer ---*/
+
+footer .page-footer {
+    background-color: #616161;
+}
 
 footer ul a {
     color: #fff
 }
+
 footer ul a:hover {
     color: #bdbdbd;
 }
