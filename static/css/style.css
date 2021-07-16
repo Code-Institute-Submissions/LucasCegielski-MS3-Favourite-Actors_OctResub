@@ -43,3 +43,11 @@ footer ul a {
 footer ul a:hover {
     color: #bdbdbd;
 }
+
+/*--- Media Queries ---*/
+
+@media (max-width: 480px) {
+    .nav-wrapper a {
+        font-size: 16px;
+    }
+}
