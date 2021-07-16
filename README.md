@@ -23,12 +23,11 @@ Aim of this project is to create a data base of favourite actors, allowing users
     - [Frameworks](#frameworks)
     - [Libraries](#libraries)
 4. [Testing](#testing)
-5. [Bugs](#bugs)
-6. [Deployment](#deployment)
+5. [Deployment](#deployment)
       [Begining](#Creating-this-project)
     - [GitHub](#github-pages)
     - [Heroku](#heroku)
-7. [Credits](#credits)
+6. [Credits](#credits)
 
 # User Experience
 
@@ -155,25 +154,25 @@ This single page application allows users to navigate easily between the game an
 
 ### **users collection**
 
-    **Title**|**Key in Collection**|**Data Type**
-    :-----:|:-----:|:-----:
-    User ID|_id|ObjectId()
-    Username|username|String
-    Password|password|String
+    |**Title**|**Key in Collection**|**Data Type**|
+    |:-----:|:-----:|:-----:|
+    |User ID|_id|ObjectId()|
+    |Username|username|String|
+    |Password|password|String|
 
 ### **actors collection**
 
-    **Title**|**Key in Collection**|**Data Type**
-    :-----:|:-----:|:-----:
-    Actor ID|_id|ObjectId()
-    Name|full_name|String
-    Nationality|nationality|String
-    Date of Birth|dob|String
-    Favourite Movie|favourite_movie|String
-    Academy Award Winner|oscars|Boolean
-    Filmography|filmography|String
-    Added By|added_by|String
-    Created Date|date|Date
+    |**Title**|**Key in Collection**|**Data Type**|
+    |:-----:|:-----:|:-----:|
+    |Actor ID|_id|ObjectId()|
+    |Name|full_name|String|
+    |Nationality|nationality|String|
+    |Date of Birth|dob|String|
+    |Favourite Movie|favourite_movie|String|
+    |Academy Award Winner|oscars|Boolean|
+    |Filmography|filmography|String|
+    |Added By|added_by|String|
+    |Created Date|date|Date|
 
 [Top](#table-of-content)
 # Testing
