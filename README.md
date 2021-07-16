@@ -154,25 +154,25 @@ This single page application allows users to navigate easily between the game an
 
 ### **users collection**
 
-    |**Title**|**Key in Collection**|**Data Type**|
-    |:-------:|:-------------------:|:-----------:|
-    |User ID|_id|ObjectId()|
-    |Username|username|String|
-    |Password|password|String|
+|**Title**|**Key in Collection**|**Data Type**|
+|:---:|:---:|:---:|
+|User ID|_id|ObjectId()|
+|Username|username|String|
+|Password|password|String|
 
 ### **actors collection**
 
-    |**Title**|**Key in Collection**|**Data Type**|
-    |:-------:|:-------------------:|:-----------:|
-    |Actor ID|_id|ObjectId()|
-    |Name|full_name|String|
-    |Nationality|nationality|String|
-    |Date of Birth|dob|String|
-    |Favourite Movie|favourite_movie|String|
-    |Academy Award Winner|oscars|Boolean|
-    |Filmography|filmography|String|
-    |Added By|added_by|String|
-    |Created Date|date|Date|
+|**Title**|**Key in Collection**|**Data Type**|
+|:---:|:---:|:---:|
+|Actor ID|_id|ObjectId()|
+|Name|full_name|String|
+|Nationality|nationality|String|
+|Date of Birth|dob|String|
+|Favourite Movie|favourite_movie|String|
+|Academy Award Winner|oscars|Boolean|
+|Filmography|filmography|String|
+|Added By|added_by|String|
+|Created Date|date|Date|
 
 [Top](#table-of-content)
 # Testing
