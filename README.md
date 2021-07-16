@@ -165,14 +165,13 @@ This single page application allows users to navigate easily between the game an
 
     **Title**|**Key in Collection**|**Data Type**
     :-----:|:-----:|:-----:
-    Scientist ID|_id|ObjectId()
-    Name|name|String
-    Country Born|country_born|String
+    Actor ID|_id|ObjectId()
+    Name|full_name|String
+    Nationality|nationality|String
     Date of Birth|dob|String
-    Field of Research|field_of_research|String
-    Description|description|String
-    Nobel Laureate|nobel_laureate|Boolean
-    URL|url|String
+    Favourite Movie|favourite_movie|String
+    Academy Award Winner|oscars|Boolean
+    Filmography|filmography|String
     Added By|added_by|String
     Created Date|date|Date
 
