@@ -33,8 +33,8 @@ nav ul a:hover {
 
 /*--- Footer ---*/
 
-footer .page-footer {
-    background-color: #616161;
+.page-footer {
+    color: #616161;
 }
 
 footer ul a {
