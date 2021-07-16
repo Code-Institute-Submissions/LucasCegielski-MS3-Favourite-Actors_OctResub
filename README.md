@@ -19,6 +19,7 @@ Aim of this project is to create a data base of favourite actors, allowing users
 3. [Technologies Used](#technologies-used)
     - [Technologies](#technologies)
     - [Languages](#languages)
+    - [MongoDB](#mongodb-database)
     - [Frameworks](#frameworks)
     - [Libraries](#libraries)
 4. [Testing](#testing)
@@ -34,9 +35,8 @@ Aim of this project is to create a data base of favourite actors, allowing users
 ## User Stories
 
 - ### First Time Visitor Goals
-    1. As a First Time Visitor, I want to access the site and find out what it is about.
-    2. As a First Time Visitor, I want to be able to navigate the application with ease and register my account.
-    3. As a First Time Visitor, I want to find the list of actors and some basic information about them.
+    1. As a First Time Visitor, I want to be able to navigate the application with ease and register my account.
+    2. As a First Time Visitor, I want to find the list of actors and some basic information about them.
 
 - ### Returning Visitor Goals
     1. As a Returning Visitor, I want to log into my already created account.
@@ -46,22 +46,18 @@ Aim of this project is to create a data base of favourite actors, allowing users
 ## Design
 
 Since the aim of the site is to find information I decided to keep it as plain and simple as possible.
-As the front page displays pictures of my top 3 favourite actors, I have chosen pictures that are in dark colors.
-I have added some font in gold to make it a little more eye-catchy.
+As the front page displays pictures of my top 3 favourite actors, I have chosen pictures that are in dark colors to match the all grey character of this app.
 
 ### Colour
 
-- Colour palette used for this project was taken from [Coolors Website](https://coolors.co).
+- Colour palette used for this project was taken from [Materialize](https://materializecss.com/color.html).
 
-- Main colors used in the project are black (#000000), White (#FFFFFF), Puce (#C2848D), Gainsboro (#E0E0E0) and Gold (#FFD700)
+- Colors used for this project are shades of grey.
 
-- The selected pallete can be viewed [here](https://coolors.co/ffffff-c2848d-141414-e0e0e0-ffd700)
-
-![Color Palette](documentation/color-palette.JPG)
 
 ### Typography
 
-- [Font](https://fonts.google.com/) EB Garamond was used throughout the project.
+- [Font](https://fonts.google.com/) Prompt was used throughout the project.
 
 - [Materialize](https://materializecss.com/icons.html) icons were used throughout the project.
 
@@ -129,7 +125,57 @@ This single page application allows users to navigate easily between the game an
 
 - [Techsini](https://techsini.com/multi-mockup/)
     - to create this project mockup, of which image is placed at the very top of this readme file.
-    
+
+- [JQuery](https://jquery.com/)
+    - DOM manipulation to initiate the interactive functions from Materialize.
+
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+    - framework used for the project.
+
+- [Jinja](https://www.palletsprojects.com/p/jinja/)
+    - templating for Python functionalities.
+
+- [Werkzeug](https://www.palletsprojects.com/p/werkzeug/)
+    - Web Server Gateway Interface web application library.
+
+- [Heroku](https://www.heroku.com/)
+    - to be build/run/operate this app in the cloud.
+
+- [MongoDB](https://www.mongodb.com/)
+    - database used for the project.
+
+## Languages
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+- [JavaScript](https://pt.wikipedia.org/wiki/JavaScript)
+- [Python](https://pt.wikipedia.org/wiki/Python)
+
+## MongoDB Database
+
+### **users collection**
+
+    **Title**|**Key in Collection**|**Data Type**
+    :-----:|:-----:|:-----:
+    User ID|_id|ObjectId()
+    Username|username|String
+    Password|password|String
+
+### **actors collection**
+
+    **Title**|**Key in Collection**|**Data Type**
+    :-----:|:-----:|:-----:
+    Scientist ID|_id|ObjectId()
+    Name|name|String
+    Country Born|country_born|String
+    Date of Birth|dob|String
+    Field of Research|field_of_research|String
+    Description|description|String
+    Nobel Laureate|nobel_laureate|Boolean
+    URL|url|String
+    Added By|added_by|String
+    Created Date|date|Date
+
 [Top](#table-of-content)
 
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -139,7 +185,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 # Testing
 
 ## General
-I have performed thorough testing of this project's website and all of its functionalities. Also, all features within this README file were tested.
+I have performed a testing of this app and all of its functionalities. Also, all features within this README file were tested.
 
 - The CSS code was tested using [Jigsaw](https://jigsaw.w3.org/css-validator/validator) and produced no errors.
 
@@ -147,48 +193,102 @@ I have performed thorough testing of this project's website and all of its funct
 
 - The JavaScript was tested using [Beautify Tools](https://beautifytools.com/javascript-validator.php) and produced some minor errors.
 
-## Testing User Stories from User Experience (UX) Section
+## Testing User Stories
 
-- ### First Time Visitor Goals
-    1. As a First Time Visitor, I want to be able to navigate the website with ease.
-        - Application is clean, free of extensive functions and in a color-pallete that is easy to read.
-        - All the functions are placed in the screen, so that there is no need to unfold or scroll through menu.
+-   ### First Time Visitor Goals
+    1. As a first time user I can navigate via the menu to the different pages and register my account on the register page.
+    2. As a first time user I can see the site is easy to navigate either via a computer or via a mobile screen by using the navbar and the side navbar.
 
-    2. As a First Time Visitor, I want to be able to find out how the game works.
-        - When entering the website, user is greeted with clear and simple instructions page, where the basics of the game are explained.
-        - Last part of the instructions page gives user the ability to control the tune that is playing in the background.
-        - Button placed at the bottom of the page allows you to jump into game without any further delays and immediately after reading the instructions.
-        - Link to my github repository was placed to simply advertise my work to potential users.
+-   ### Returning Visitor Goals
+    1. As a returning user I can have my session cookie saved so I don't need to login back to the site.
+    2. As a returning user I can easily check the compendium and see all the scientists added there.
+    3. As a returning user I can check the featured scientists and the most recent scientists added by checking the homepage.
+    4. As a returning user I can search for my favorite scientists using the search bar.
 
-    3. As a First Time Visitor, I want to be able to play the game.
-        - The character of the brand icons, the color palette and the tune used were meant to be eye-catchy and pleasant to use.
-        - There are no pop-up windows and user is able to jump straight into action without any delays.
-        - The Instruction button is located conveniently just above the game screen, for easy access, should user need it.
-        - User is able to track their time, score and amount of moves made in real time, thanks to the counters located at teh top of the game window.
-        - User is able to control the tune while playing the game.
-        - Thanks to Restart button located at the bottom of the page, user can restart the game at anytime. By doing so, user also restarts the counters.
+-   ### Frequent Visitor Goals
+    1. As a return user I can either log in to my registered account without needing to register again.
+    2. As a return user I can check the Add page to add more scientists to the database.
+    3. As a return user I can check each scientist information with more details and then edit the scientists and update their information.
+    4. As a return user I can search for a particular scientist and edit that particular scientist and update his information.
 
-    4. As a First Time Visitor, I want to be able to find out what my score is at the end of the game.
-        - The pop-up window will display the final score, time spent in game and amount of moves when the game is finished.
-        - In the future development, the said pop-up screen will allow user to invite other people to play the game and will allow the access to the leaderboard.
+## Additional Testing
+
+    All testing performed via the app deployed to Heroku (on compendium-of-scientists.herokuapp.com/home)
+
+-   ### Testing base template (base.html):
+
+    1. When clicking on the Navbar options the correct page link should work.
+
+    2. Tested the mobile sidebar and tested the different page links.
+
+    3. Tested the Flash messages to make sure they were working when the user Log In and displays the "Welcome, user" message.
+
+    4. Tested all the Links on the navbar to make sure they are working fine and are being opened in a new tab.
+
+-   ### Testing Homepage :
+    1. Checking the overall responsiveness of the page on different emulated devices and different browsers already specified under the Testing category.
     
-- ### Returning Visitor Goals
-    1. As a Returning Visitor, I want to play the game and get better at it.
-        - Thanks to the stats run by the application, user can see how they did each time they play.
-        - User can come back anytime and play as many time as they want.
-        - User can restart the game at any time using the restart button.
+    2. When User is Logged In: Checked the "More Details" button under each one of the three "Famous Scientists" sections to make sure the detailed page opens for the correct scientist. 
+        1.  When User is Logged Out: Tested to make sure this option is hidden.
     
-    2. As a Returning Visitor, I want to be able to beat my own time.
-        - The time user has been playing the game is displaying in the real time in MM:SS format.
-        - The final time is also displayed in the final pop-up that shows the final stats when the game is finished.
+    3. Tested the "Recent Additions" section to make sure the loop is working and displaying the latest six scientists added to the database. 
+        1.  When User is Logged In: Tested the "More Details" option to make sure it was working and displaying. 
+        2.   When User is Logged Out: Checked the "More Details" option to make sure it was not displaying.
 
-    3. As a Returning Visitor, I want to be able to beat my own score.
-        - The current score is displayed during the game for the player to see.
-        - The final score is also displayed in the final pop-up that shows the final stats when the game is finished.
+-   ### Testing Compendium page (compendium.html):
+    1. Tested the Search Bar to make sure the "Reset" option works and clean the filtered search.
 
-    4. As a Returning Visitor, I want to be finish the game in fewer moves.
-        - Time is displayed throughout the game with the clock that starts running the moment the user clicks on the first card.
-        - The total time the user has been playing is also displayed in the final pop-up that shows the final stats when the game is finished.
+    2. Tested the "Search" option to make sure it was searching correctly the Scientist Name, Born in field, Field of Research and Nobel Laureate.
+
+    3. Tested the "More Details" option to make sure it was opening the correct scientist detailed page.
+
+-   ### Testing Detailed Scientists page (scientists.html):
+    1. Made sure when the "More Details" option is clicked on the scientist that his detailed page with the correct information would load out and display.
+
+    2. Tested that all the Wikipedia links on the scientist detailed page (/scientists/scientist_id) are working and opening the Wikipedia site in a new tab.
+
+    3. Tested the "Delete" option on the scientist detailed page (/scientists/scientist_id) to make sure the scientists are indeed deleted from the database
+
+    4. Tested the "Edit" option on the scientist detailed page (/scientists/scientist_id) to make sure it would redirect to the correct edit_scientist.html page
+
+-   ### Testing Add page (add_scientist.html):
+    1. Added several test scientists and checked the database to make sure they were added correctly.
+
+    2. Tested the required option on the fields: Scientist Name, Country of Birth, Date of Birth, Field of Research and Short Description. Also tested the minimum and maximum length required for each field:
+
+-   ### Testing Logout option:
+    1. Tested the Flash message that appears when User Logs out: "You have successfully logged out"
+
+    2. Made sure the cookie session is cleared after User Logs out and that the "More Details" option is hidden, as well with the Nav Bar options: "Add" and "Logout"
+
+    3. Tested the redirection to the "Log In Page" after Users logs out.
+
+-   ### Testing Sign Up option:
+    1. Tested trying to add a Username that already exists on the database and that it displays the Flash Message "This User already exists"
+
+    2. Tested the only accepted format: Alphanumeric and minimum and maximum length for the "User" field and the "Password" field.
+
+    3. Tested the redirection after User is successfully registered to the Homepage and checked that it shows the correct flash message "Registration Successful!" on the homepage.
+
+    4. Tested required fields for "User" and "Password"
+
+    5. Tested the Link option to redirect to the "Log In" page if the User is already registered.
+
+-   ### Testing Log In option:
+    1. Tested the Flash message that appears when User tries to Log In with a wrong User or Password: "Incorrect User and/or Password"
+
+    2. Tested the successful login and the redirection to the homepage and the Flash message that appears: "Welcome, user"
+
+    3. Tested required fields for "User" and "Password"
+
+    4. Tested the Link option to redirect to the Sign Up page if the User is not registered yet.
+
+-   ### Testing edit_scientist.html Page:
+    1. Made sure the details for Scientist Name, Country of Birth, Date of Birth, Field of Research, and Wikipedia URL are pre-filled with the current information.
+
+    2. Tested the "Cancel" option to make sure nothing was updated on the database and that the page redirects back to the compendium page.
+
+    3. Tested the "Update" option and made sure the modified scientist details were modified on the database.
 
 
 ## Further Testing
