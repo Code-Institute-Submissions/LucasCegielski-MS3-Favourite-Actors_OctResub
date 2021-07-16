@@ -177,11 +177,6 @@ This single page application allows users to navigate easily between the game an
     Created Date|date|Date
 
 [Top](#table-of-content)
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
 # Testing
 
 ## General
@@ -196,147 +191,54 @@ I have performed a testing of this app and all of its functionalities. Also, all
 ## Testing User Stories
 
 -   ### First Time Visitor Goals
-    1. As a first time user I can navigate via the menu to the different pages and register my account on the register page.
-    2. As a first time user I can see the site is easy to navigate either via a computer or via a mobile screen by using the navbar and the side navbar.
+    1. As a First Time Visitor I can navigate via the menu to the available and clearly marked pages, and register my account on the signup page.
+    2. As a First Time Visitor I can see the site is easy to navigate either via a computer or via a mobile screen by using the navbar and the side navbar.
 
 -   ### Returning Visitor Goals
-    1. As a returning user I can have my session cookie saved so I don't need to login back to the site.
-    2. As a returning user I can easily check the compendium and see all the scientists added there.
-    3. As a returning user I can check the featured scientists and the most recent scientists added by checking the homepage.
-    4. As a returning user I can search for my favorite scientists using the search bar.
-
--   ### Frequent Visitor Goals
-    1. As a return user I can either log in to my registered account without needing to register again.
-    2. As a return user I can check the Add page to add more scientists to the database.
-    3. As a return user I can check each scientist information with more details and then edit the scientists and update their information.
-    4. As a return user I can search for a particular scientist and edit that particular scientist and update his information.
+    1. As a Returning Visitor I don't need to log back into the site, since I have the cookie session saved.
+    2. As a Returning Visitor I can easily search the database for entries.
+    3. As a Returning Visitor I can check the actors in the database and edit/delete them.
 
 ## Additional Testing
 
-    All testing performed via the app deployed to Heroku (on compendium-of-scientists.herokuapp.com/home)
+    All testing performed via the app deployed to Heroku (on my-favourite-actors.herokuapp.com/home)
 
--   ### Testing base template (base.html):
+-   ### Base template and home page (base.html and home.html)
 
-    1. When clicking on the Navbar options the correct page link should work.
+    1. When clicking on the logo in the navbar, user is being taken to the home page.
+    2. All the links in the navbar take the user into the correct section of the application.
+    3. Flash messages are being displayed when user is registering new account/login in/login out/editing the database entries or deleting them.
+    4. The images of the top 3 favourite actors are displayed with the Show More button that take user to relevant entries when clicked
+    5. The Show More button located at each of the recent entries take user to relevant entry when clicked.
+    6. Links in the footer take user to relevant websites when clicked and open in the new tab. 
 
-    2. Tested the mobile sidebar and tested the different page links.
+-   ### Login and Signup page (signup.html and login.html) 
+    1. When user is first entering the page, the "Add" and "Logout" button are no visible
+    2. When user creates new account, flash message is displayed informing about successful operation.
+    3. Flash message is also displayed when user has successfully logged in.
+    4. When user is logged in, the option to add entry and to logout become visible.
 
-    3. Tested the Flash messages to make sure they were working when the user Log In and displays the "Welcome, user" message.
 
-    4. Tested all the Links on the navbar to make sure they are working fine and are being opened in a new tab.
+-   ### Add entry, edit entry and delete entry pages (add_actor.html and edit_actor.html):
+    1. User is able to edit existing entry in the database.
+    2. User is able to add new entry to the database.
+    3. User is able to delete entry from the database.
+    4. Each of the above operations triggers the flash message being displayed.
+    5. The filmography button takes user to Wikipedia page that displays actor's work and opens in new tab.
 
--   ### Testing Homepage :
-    1. Checking the overall responsiveness of the page on different emulated devices and different browsers already specified under the Testing category.
-    
-    2. When User is Logged In: Checked the "More Details" button under each one of the three "Famous Scientists" sections to make sure the detailed page opens for the correct scientist. 
-        1.  When User is Logged Out: Tested to make sure this option is hidden.
-    
-    3. Tested the "Recent Additions" section to make sure the loop is working and displaying the latest six scientists added to the database. 
-        1.  When User is Logged In: Tested the "More Details" option to make sure it was working and displaying. 
-        2.   When User is Logged Out: Checked the "More Details" option to make sure it was not displaying.
 
--   ### Testing Compendium page (compendium.html):
-    1. Tested the Search Bar to make sure the "Reset" option works and clean the filtered search.
-
-    2. Tested the "Search" option to make sure it was searching correctly the Scientist Name, Born in field, Field of Research and Nobel Laureate.
-
-    3. Tested the "More Details" option to make sure it was opening the correct scientist detailed page.
-
--   ### Testing Detailed Scientists page (scientists.html):
-    1. Made sure when the "More Details" option is clicked on the scientist that his detailed page with the correct information would load out and display.
-
-    2. Tested that all the Wikipedia links on the scientist detailed page (/scientists/scientist_id) are working and opening the Wikipedia site in a new tab.
-
-    3. Tested the "Delete" option on the scientist detailed page (/scientists/scientist_id) to make sure the scientists are indeed deleted from the database
-
-    4. Tested the "Edit" option on the scientist detailed page (/scientists/scientist_id) to make sure it would redirect to the correct edit_scientist.html page
-
--   ### Testing Add page (add_scientist.html):
-    1. Added several test scientists and checked the database to make sure they were added correctly.
-
-    2. Tested the required option on the fields: Scientist Name, Country of Birth, Date of Birth, Field of Research and Short Description. Also tested the minimum and maximum length required for each field:
-
--   ### Testing Logout option:
-    1. Tested the Flash message that appears when User Logs out: "You have successfully logged out"
-
-    2. Made sure the cookie session is cleared after User Logs out and that the "More Details" option is hidden, as well with the Nav Bar options: "Add" and "Logout"
-
-    3. Tested the redirection to the "Log In Page" after Users logs out.
-
--   ### Testing Sign Up option:
-    1. Tested trying to add a Username that already exists on the database and that it displays the Flash Message "This User already exists"
-
-    2. Tested the only accepted format: Alphanumeric and minimum and maximum length for the "User" field and the "Password" field.
-
-    3. Tested the redirection after User is successfully registered to the Homepage and checked that it shows the correct flash message "Registration Successful!" on the homepage.
-
-    4. Tested required fields for "User" and "Password"
-
-    5. Tested the Link option to redirect to the "Log In" page if the User is already registered.
-
--   ### Testing Log In option:
-    1. Tested the Flash message that appears when User tries to Log In with a wrong User or Password: "Incorrect User and/or Password"
-
-    2. Tested the successful login and the redirection to the homepage and the Flash message that appears: "Welcome, user"
-
-    3. Tested required fields for "User" and "Password"
-
-    4. Tested the Link option to redirect to the Sign Up page if the User is not registered yet.
-
--   ### Testing edit_scientist.html Page:
-    1. Made sure the details for Scientist Name, Country of Birth, Date of Birth, Field of Research, and Wikipedia URL are pre-filled with the current information.
-
-    2. Tested the "Cancel" option to make sure nothing was updated on the database and that the page redirects back to the compendium page.
-
-    3. Tested the "Update" option and made sure the modified scientist details were modified on the database.
-
+-   ### Search entries (search.html):
+    1. User is able to search the database using the name of the actor.
+    2. The entry displayed upon completion of the search operation, allows user to look into the entry in order to view it, edit it or delete it.
 
 ## Further Testing
-Browsers:
 
-- Project was tested by myself in Chrome browser only. Mozilla and Firefox browsers were crashing my laptop when installed. I tried to fix this issue, but it seems that due to equipment malfunction, I could only test this project in Chrome.
+-   I tested the project using Chrome only. For some reason, when I use Mozilla or Firefox, my laptop is freezing which makes it very difficult to open applications. 
 
-- Testing using Mozilla and Firefox browsers was done by a friend, who said that Mozilla takes longer than Firefox to open the website, and that no other issues were spotted.
+- I asked friend to test the application using the other two mentioned browsers and he reported no issues.
 
-Desktop, Tablet & Mobile view:
+- Friends and family were asked to play with the application and no issues were reported apart from few typos.
 
-- Website's responsiveness was tested on mobile devices with a use of:
-
-    - ["Am I responsive"](http://ami.responsivedesign.is/#) facility.
-
-    - Google Chrome DevTools.
-
-- Application was viewed and tested on desktop, laptop, iPad Air, Huawei P30 Lite, and Samsung Galaxy A3.
-
-- Most testing was done to assure the correct layout and the game's functionalities.
-
-- Friends were asked to also test the application for bugs, etc.
-
-Modals:
-
-- Instructions modal opens from the main page by clicking on the **Instructions** button. Modal pops opened each time without a fail.
-
-- Success modal pops open upon completion of the game. Modal opened each time without a fail.
-
-Score Board:
-
-- Timer starts running the moment the first icon is clicked upon.
-
-- Moves counter shows new move each time user clicks the icon.
-
-- Reset function works when clicked upon and resets the counters and the screen, esentially reseting the game.
-
-Readme file:
-
-- Table of contents remains interactive and takes user to correct parts of the file.
-
-- Back-to-top link feature was added at the end of each chapter to allow user to easily navigate the file. 
-
-[Top](#table-of-content)
-
-# Bugs
-
-Most bugs were cleared thanks to all the people and communities mentioned in credits below, and the use of the HTML and CSS validators.
 
 # Deployment
 
@@ -420,16 +322,20 @@ Most bugs were cleared thanks to all the people and communities mentioned in cre
 
 ## Content
 
-- Apart from [Fontawesome]() icons, no external content was used.
+- As mentioned above, the font and icons were sourced externaly.
+
+- Images used on the homepage were sourced from relevant wikipedia sites.
 
 ## Acknowledgements
 
 - My Mentor Aaron, for help, valuable inputs and inspirations.
 
-- My kids, Maya & Max for thorough testing.
+- [Code Institue's](https://codeinstitute.net/) Tutors, for help on resolving issues.
+
+- My family and friends, for testing and advice.
 
 - [Stackoverflow](https://stackoverflow.com/), Slack and Github communities for feedback and troubleshoot throughout.
 
-- All developers and coders I have followed on [YouTube](https://www.youtube.com/) and especially [RichardCodes](https://www.youtube.com/watch?v=gLWIYk0Sd38&t=42s).
+- All developers and coders I have followed on [YouTube](https://www.youtube.com/).
 
 [Top](#table-of-content)
