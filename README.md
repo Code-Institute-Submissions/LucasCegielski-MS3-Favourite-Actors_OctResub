@@ -155,7 +155,7 @@ This single page application allows users to navigate easily between the game an
 ### **users collection**
 
     |**Title**|**Key in Collection**|**Data Type**|
-    |:-----:|:-----:|:-----:|
+    |:-------:|:-------------------:|:-----------:|
     |User ID|_id|ObjectId()|
     |Username|username|String|
     |Password|password|String|
@@ -163,7 +163,7 @@ This single page application allows users to navigate easily between the game an
 ### **actors collection**
 
     |**Title**|**Key in Collection**|**Data Type**|
-    |:-----:|:-----:|:-----:|
+    |:-------:|:-------------------:|:-----------:|
     |Actor ID|_id|ObjectId()|
     |Name|full_name|String|
     |Nationality|nationality|String|
