@@ -2,7 +2,7 @@
 
 ![Project's Mockup](assets/project/MS3Mockup.JPG)
 
-Click [here](https://lucascegielski.github.io/MS2-Brands_memory_game/) to see live project.
+Click [here](https://lucascegielski.github.io/MS3-Favourite-Actors/) to see live project.
 
 # My Favourite Actors
 
@@ -121,7 +121,7 @@ This single page application allows users to navigate easily between the game an
     - to validate CSS code by input.
 
 - [Am I responsive](http://ami.responsivedesign.is/#)
-    - to test mobile devices responsiveness of my website.
+    - to test mobile devices responsiveness of my app.
 
 - [Techsini](https://techsini.com/multi-mockup/)
     - to create this project mockup, of which image is placed at the very top of this readme file.
@@ -267,7 +267,7 @@ I have performed a testing of this app and all of its functionalities. Also, all
 
 - Scroll down to "Github Pages" section.
 
-- Click on dropdown called "None" and select "Master Branch" so it looks like in the image below ![screenshot](./documentation/screenshots/githubpages1.jpg)
+- Click on dropdown called "None" and select "Master Branch".
 
 - Click save next to it and wait for the page to refresh automatically. You will be taken back to the top of the settings page.
 
