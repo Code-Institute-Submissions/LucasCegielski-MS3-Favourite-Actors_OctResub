@@ -1,6 +1,6 @@
 <h1 align="center">Code Institute Milestone Project 3 - My Favourite Actors</h1>
 
-![Project's Mockup](assets/project/MS3Mockup.JPG)
+![Project's Mockup](documentation/MS3mockup.JPG)
 
 Click [here](https://my-favourite-actors.herokuapp.com/) to see live project.
 
