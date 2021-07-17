@@ -51,3 +51,9 @@ footer ul a:hover {
         font-size: 16px;
     }
 }
+
+@media (min-width: 480px) {
+    .nav-wrapper a {
+        font-size: 18px;
+    }
+}

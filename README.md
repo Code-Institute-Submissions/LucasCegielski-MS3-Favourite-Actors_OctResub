@@ -2,7 +2,7 @@
 
 ![Project's Mockup](assets/project/MS3Mockup.JPG)
 
-Click [here](https://lucascegielski.github.io/MS3-Favourite-Actors/) to see live project.
+Click [here](https://my-favourite-actors.herokuapp.com/) to see live project.
 
 # My Favourite Actors
 
@@ -307,7 +307,7 @@ I have performed a testing of this app and all of its functionalities. Also, all
 
 - In order to run this project locally, follow the below steps:
 
-    - Click on the [link](https://github.com/LucasCegielski/MS2-Brands_memory_game) to this project's repository in GitHub (you must be logged into your own Github account).
+    - Click on the [link](https://github.com/LucasCegielski/MS3-Favourite-Actors) to this project's repository in GitHub (you must be logged into your own Github account).
     - Click on the dropdown menu Code button located next to green "Gitpod" button.
     - Click on "Open with GitHub Desktop" to clone and open the repository locally.
     - Click on the "Choose" option and navigate to the local path where the cloned repository should be located.
