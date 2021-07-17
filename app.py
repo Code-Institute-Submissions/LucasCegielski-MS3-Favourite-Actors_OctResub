@@ -20,7 +20,6 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-
 # Create search index
 mongo.db.actors.create_index([('full_name', TEXT
 )], name='search_index', default_language='english')
@@ -167,8 +166,7 @@ def delete_actor(actor_id):
     return redirect(url_for("actors"))
 
 
-# !!!!!!! CHANGE to debug=False BEFORE DEPLOYING !!!!!!!!!
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
