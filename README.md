@@ -4,9 +4,9 @@
 
 Click [here](https://my-favourite-actors.herokuapp.com/) to see live project.
 
-# My Favourite Actors
+# Favourite Actors
 
-Aim of this project is to create a data base of favourite actors, allowing users to share their passion for cinematography.
+Aim of this project is to create a data base of favourite actors, allowing users to share their passion for cinematography. Since the initial project was meant to serve individual users, the concept was changed slightly during development in order to make it possible for user to truly share their love to the art of acting. One of the subtle changes was that of the title, from "My Favourite Actors" to "Favourite Actors", hence the title of the project is that much different from the page title.
 
 # Table of Content
 
@@ -45,7 +45,7 @@ Aim of this project is to create a data base of favourite actors, allowing users
 ## Design
 
 Since the aim of the site is to find information I decided to keep it as plain and simple as possible.
-As the front page displays pictures of my top 3 favourite actors, I have chosen pictures that are in dark colors to match the all grey character of this app.
+As the front page displays pictures of the top 3 favourite actors, I have chosen pictures that are in dark colors to match the all grey character of this app.
 
 ### Colour
 
@@ -66,7 +66,7 @@ As the front page displays pictures of my top 3 favourite actors, I have chosen 
 
 - Files saved from Figma, were converted from .fig into .jpg file with use of [Filestar](https://filestar.com/) application.
 
-- Wireframe of this application can be seen in the documentation folder in this project in .jpg file.
+- Wireframe of this application can be seen in the documentation folder in this project in .jpg file or can be seen [here](documentation/MS3Wireframe.jpg)
 
 [Top](#table-of-content)
 # Features
@@ -330,11 +330,11 @@ I have performed a testing of this app and all of its functionalities. Also, all
 
 - As mentioned above, the font and icons were sourced externaly.
 
-- Images used on the homepage were sourced from relevant wikipedia sites.
+- Images used on the homepage were sourced from relevant [Wikipedia](https://www.wikipedia.org/) sites.
 
 ## Acknowledgements
 
-- My Mentor Aaron, for help, valuable inputs and inspirations.
+- My Mentor Aaron, for help, valuable inputs and inspirations and the begining of the project. Also to my newly assigned mentor Akshat, who helped me a lot with the errors and final push before submission.
 
 - [Code Institue's](https://codeinstitute.net/) Tutors, for help on resolving issues.
 
@@ -342,6 +342,6 @@ I have performed a testing of this app and all of its functionalities. Also, all
 
 - [Stackoverflow](https://stackoverflow.com/), Slack and Github communities for feedback and troubleshoot throughout.
 
-- All developers and coders I have followed on [YouTube](https://www.youtube.com/).
+- Countless developers and coders I have followed on [YouTube](https://www.youtube.com/).
 
 [Top](#table-of-content)
