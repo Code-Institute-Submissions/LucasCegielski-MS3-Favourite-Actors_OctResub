@@ -19,10 +19,11 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
-# Create search index
-mongo.db.actors.create_index([('full_name', TEXT
-)], name='search_index', default_language='english')
+def is_logged_in():
+    if session["user"]:
+        return True
+    else:
+        return False
 
 
 @app.route("/")
@@ -41,8 +42,11 @@ def actors():
 
 @app.route("/actors/<actor_id>")
 def actor(actor_id):
-    actor = mongo.db.actors.find_one({"_id": ObjectId(actor_id)})
-    return render_template("actors.html", actor=actor)
+    try:
+        actor = mongo.db.actors.find_one({"_id": ObjectId(actor_id)})
+        return render_template("actors.html", actor=actor)
+    except:
+        return redirect(url_for("home"))
 
 
 # Search functionality
@@ -91,10 +95,10 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                    existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
-                    return redirect(url_for("home"))
+                existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
+            return redirect(url_for("home"))
             else:
                 # invalid password match
                 flash("Incorrect User and/or Password")
@@ -120,13 +124,16 @@ def logout():
 # Add actor functionality
 @app.route("/actors/add", methods=["GET", "POST"])
 def add_actor():
+    logged_in = is_logged_in()
+    if not logged_in:
+        return redirect(url_for("home"))
+
     if request.method == "POST":
         actor = {
             "full_name": request.form.get("full_name"),
             "nationality": request.form.get("nationality"),
             "dob": request.form.get("dob"),
             "favourite_movie": request.form.get("favourite_movie"),
-            # "description": request.form.get("description"),
             "oscars": request.form.get("oscars"),
             "filmography": request.form.get("filmography"),
             "added_by": session["user"],
@@ -141,18 +148,27 @@ def add_actor():
 # Edit actor functionality
 @app.route("/edit_actor/<actor_id>", methods=["GET", "POST"])
 def edit_actor(actor_id):
+    logged_in = is_logged_in()
+    if not logged_in:
+        return redirect(url_for("home"))
+
     if request.method == "POST":
-        submit = {
-            "full_name": request.form.get("full_name"),
-            "nationality": request.form.get("nationality"),
-            "dob": request.form.get("dob"),
-            "favourite_movie": request.form.get("favourite_movie"),
-            "oscars": request.form.get("oscars"),
-            "filmography": request.form.get("filmography")
-        }
-        mongo.db.actors.update({"_id": ObjectId(actor_id)}, submit)
-        flash("An Actor was updated")
-        return redirect(url_for("actors"))
+        try:
+            submit = {
+                "full_name": request.form.get("full_name"),
+                "nationality": request.form.get("nationality"),
+                "dob": request.form.get("dob"),
+                "favourite_movie": request.form.get("favourite_movie"),
+                "oscars": request.form.get("oscars"),
+                "filmography": request.form.get("filmography"),
+                "added_by": session["user"],
+                "date": datetime.datetime.utcnow()
+            }
+            mongo.db.actors.update({"_id": ObjectId(actor_id)}, submit)
+            flash("An Actor was updated")
+            return redirect(url_for("actors"))
+        except:
+            return redirect(url_for("actors"))
 
     actor = mongo.db.actors.find_one({"_id": ObjectId(actor_id)})
     return render_template("edit_actor.html", actor=actor)
@@ -161,9 +177,15 @@ def edit_actor(actor_id):
 # Delete actor functionality
 @app.route("/delete_actor/<actor_id>")
 def delete_actor(actor_id):
-    mongo.db.actors.remove({"_id": ObjectId(actor_id)})
-    flash("Actor was deleted")
-    return redirect(url_for("actors"))
+    logged_in = is_logged_in()
+    if not logged_in:
+        return redirect(url_for("home"))
+    try:
+        mongo.db.actors.remove({"_id": ObjectId(actor_id)})
+        flash("Actor was deleted")
+        return redirect(url_for("actors"))
+    except:
+        return redirect(url_for("actors"))
 
 
 if __name__ == "__main__":
