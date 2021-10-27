@@ -180,11 +180,21 @@ This single page application allows users to navigate easily between the game an
 ## General
 I have performed a testing of this app and all of its functionalities. Also, all features within this README file were tested.
 
-- The CSS code was tested using [Jigsaw](https://jigsaw.w3.org/css-validator/validator) and produced no errors.
-
 - The HTML code was tested using [W3C Validator](https://validator.w3.org/nu/#textarea) and produced no errors.
 
 - The JavaScript was tested using [Beautify Tools](https://beautifytools.com/javascript-validator.php) and produced some minor errors.
+
+- [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_uri) was used in order to validate all pages HTML by URL. Only one error was found but it's related to the external Materialize source from: https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css.
+
+- [Webformatter](https://webformatter.com/html) was used to check for correct formatting of HTML & CSS.
+
+- [PEP8 online check](http://pep8online.com/) was used to check PEP8 compliance and returned no major errors.
+
+- [Javascript Validator](https://jshint.com/) returned no errors from js file.
+
+- [Google Lighthouse](https://developers.google.com/web/tools/lighthouse#devtools) - Was used to check homepage page performance
+    - ![Google Lighthouse Results](documentation/lighthouse.JPG)
+
 
 ## Testing User Stories
 
@@ -216,14 +226,12 @@ I have performed a testing of this app and all of its functionalities. Also, all
     3. Flash message is also displayed when user has successfully logged in.
     4. When user is logged in, the option to add entry and to logout become visible.
 
-
 -   ### Add entry, edit entry and delete entry pages (add_actor.html and edit_actor.html):
     1. User is able to edit existing entry in the database.
     2. User is able to add new entry to the database.
     3. User is able to delete entry from the database.
     4. Each of the above operations triggers the flash message being displayed.
     5. The filmography button takes user to Wikipedia page that displays actor's work and opens in new tab.
-
 
 -   ### Search entries (search.html):
     1. User is able to search the database using the name of the actor.
@@ -235,7 +243,7 @@ I have performed a testing of this app and all of its functionalities. Also, all
 
 - I asked friend to test the application using the other two mentioned browsers and he reported no issues.
 
-- Friends and family were asked to play with the application and no issues were reported apart from few typos.
+- Friends and family were asked to play with the application and no issues were reported apart from few typos that were fixed.
 
 
 # Deployment
