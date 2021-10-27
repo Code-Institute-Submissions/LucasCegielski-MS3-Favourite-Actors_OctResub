@@ -199,13 +199,13 @@ I have performed a testing of this app and all of its functionalities. Also, all
 ## Testing User Stories
 
 -   ### First Time Visitor Goals
-    1. As a First Time Visitor I can navigate via the menu to the available and clearly marked pages, and register my account on the signup page.
-    2. As a First Time Visitor I can see the site is easy to navigate either via a computer or via a mobile screen by using the navbar and the side navbar.
+    1. As a First Time Visitor I can navigate via the menu to the available and clearly marked pages, and register my account on the signup page. All links are working fine and render pages without fail. When registering the account, the form looks pleasant and the process is intuitional.
+    2. As a First Time Visitor I can see the site is easy to navigate either via a computer or via a mobile screen by using the navbar and the side navbar. Pages aren't cluttered and the information present is enough to make it functional.
 
 -   ### Returning Visitor Goals
-    1. As a Returning Visitor I don't need to log back into the site, since I have the cookie session saved.
-    2. As a Returning Visitor I can easily search the database for entries.
-    3. As a Returning Visitor I can check the actors in the database and edit/delete them.
+    1. As a Returning Visitor I don't need to log back into the site, since I have the cookie session saved. The login process is easy to follow.
+    2. As a Returning Visitor I can easily search the database for entries. Once logged in, the data base allows users to quickly search the entries and get to the information fast.
+    3. As a Returning Visitor I can check the actors in the database and edit/delete them. Logged in users can manage the entries with easy and the message is displayed each time the actor is added, edited or deleted.
 
 ## Additional Testing
 
