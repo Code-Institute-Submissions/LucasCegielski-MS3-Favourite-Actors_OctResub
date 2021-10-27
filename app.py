@@ -19,6 +19,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 def is_logged_in():
     if session["user"]:
         return True
@@ -98,11 +99,11 @@ def login():
                 existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
-            return redirect(url_for("home"))
+                return redirect(url_for("home"))
             else:
                 # invalid password match
                 flash("Incorrect User and/or Password")
-                return redirect(url_for("login"))
+            return redirect(url_for("login"))
 
         else:
             # username doesn't exist
